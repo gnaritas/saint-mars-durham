@@ -1,0 +1,8 @@
+{
+  "name": "saint-mars-durham",
+  "version": "1.0.0",
+  "description": "Saint Mars — vinyl-only cocktail bar and listening room, Durham NC (static site + node form relay)",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

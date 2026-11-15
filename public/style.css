@@ -1,0 +1,145 @@
+/* Saint Mars — vinyl-only cocktail bar & listening room, Durham NC. Hand-rolled CSS, no frameworks, no JS. */
+:root{
+  --esp:#16110d; --panel:#201911; --panel2:#272017; --ink:#0f0b07;
+  --cream:#f3ead9; --muted:#b9a98e; --brass:#c9a24f; --brass2:#e2c06b;
+  --ox:#8a4434; --line:rgba(201,162,79,.24); --line2:rgba(201,162,79,.42);
+  --groove1:#0e0a06; --groove2:#171208;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{color-scheme:dark;-webkit-text-size-adjust:100%}
+body{background:var(--esp);color:var(--cream);font:17px/1.7 Georgia,"Times New Roman",serif;overflow-x:hidden}
+a{color:var(--brass2)}
+img,iframe{max-width:100%}
+::selection{background:var(--brass);color:#171208}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:8px;top:8px;background:var(--brass);color:#171208;padding:8px 12px;z-index:9}
+
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.lbl{font:600 12px/1.5 -apple-system,BlinkMacSystemFont,system-ui,"Helvetica Neue",sans-serif;letter-spacing:.24em;text-transform:uppercase;color:var(--brass)}
+h1{font-size:clamp(44px,7.2vw,84px);font-weight:400;letter-spacing:.03em;line-height:1.08}
+h2{font-size:clamp(26px,3.4vw,36px);font-weight:400;letter-spacing:.02em;line-height:1.2}
+h3{font-size:21px;font-weight:400;letter-spacing:.04em}
+p{margin:0}
+em{color:var(--brass2);font-style:italic}
+
+header.top{border-bottom:1px solid var(--line);background:rgba(22,17,13,.94)}
+.top .wrap{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 28px;padding-top:18px;padding-bottom:18px}
+.brand{flex:1 1 auto;min-width:210px}
+.brand a{color:var(--cream);text-decoration:none;font-size:23px;letter-spacing:.14em;text-transform:uppercase}
+.brand .tag{display:block;font:600 10px/1.6 -apple-system,system-ui,sans-serif;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-top:4px}
+nav{flex:0 1 auto;display:flex;flex-wrap:wrap;gap:4px 22px}
+nav a{color:var(--cream);text-decoration:none;font:600 13px/1.7 -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:2px 0;border-bottom:1px solid transparent}
+nav a:hover,nav a:focus{color:var(--brass2);border-bottom-color:var(--line2)}
+nav a[aria-current]{color:var(--brass2);border-bottom-color:var(--brass)}
+
+main>section{padding:64px 0;border-bottom:1px solid var(--line)}
+main>section:last-of-type{border-bottom:none}
+main section p+p{margin-top:16px}
+main section p+ul,main section p+.btnrow{margin-top:22px}
+main section h2+p,main section h2+ul{margin-top:22px}
+main section h3+p{margin-top:12px}
+.crumbs{font:500 12px/1.7 -apple-system,system-ui,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:22px 0 0}
+.crumbs a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.crumbs a:hover{color:var(--brass2)}
+
+.hero{padding:96px 0 84px!important;position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+.hero .wrap{position:relative;z-index:2;max-width:1080px}
+.hero .deck{max-width:560px;margin-top:22px;color:var(--cream);font-size:19px}
+.hero .under{max-width:560px;margin-top:14px;color:var(--muted);font-size:16px}
+.disc{position:absolute;z-index:1;right:-140px;top:50%;transform:translateY(-50%);width:520px;height:520px;border-radius:50%;
+  background:repeating-radial-gradient(circle at 50% 50%,var(--groove1) 0 4px,var(--groove2) 4px 8px);
+  box-shadow:0 0 0 1px var(--line),0 34px 90px rgba(0,0,0,.55);opacity:.85}
+.disc::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:190px;height:190px;border-radius:50%;
+  background:radial-gradient(circle at 50% 45%,#e4c578,#c9a24f 60%,#a47f33);box-shadow:0 0 0 2px rgba(22,17,13,.6)}
+.disc .sidea{position:absolute;z-index:3;left:50%;top:50%;transform:translate(-50%,-50%);text-align:center;width:170px;
+  font:600 11px/1.9 -apple-system,system-ui,sans-serif;letter-spacing:.22em;text-transform:uppercase;color:#221808}
+.disc .spindle{position:absolute;z-index:4;left:50%;top:50%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:var(--esp);box-shadow:0 0 0 3px rgba(34,24,8,.5)}
+
+.btnrow{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;background:var(--brass);color:#171208;text-decoration:none;border-radius:2px;
+  font:700 13px/1.2 -apple-system,system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;padding:16px 24px;border:1px solid var(--brass)}
+.btn:hover,.btn:focus{background:var(--brass2);border-color:var(--brass2);outline:none}
+.btn.ghost{background:transparent;color:var(--brass2);border-color:var(--line2)}
+.btn.ghost:hover,.btn.ghost:focus{background:rgba(201,162,79,.12);color:var(--brass2)}
+.tel,.dir{white-space:nowrap}
+
+.sides{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:26px}
+.side{border:1px solid var(--line);background:var(--panel);padding:30px 28px 26px;position:relative}
+.side:hover{border-color:var(--line2)}
+.side h3{margin-top:16px}
+.side p{color:var(--cream);font-size:16px;margin-top:12px}
+.side .more{display:inline-block;margin-top:18px;color:var(--brass2);text-decoration:none;
+  font:700 12px/1.6 -apple-system,system-ui,sans-serif;letter-spacing:.18em;text-transform:uppercase}
+.side .more:hover{text-decoration:underline}
+.mini{width:64px;height:64px;border-radius:50%;position:relative;
+  background:repeating-radial-gradient(circle at 50% 50%,var(--groove1) 0 3px,var(--groove2) 3px 6px);box-shadow:0 0 0 1px var(--line)}
+.mini::after{content:"";position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:24px;height:24px;border-radius:50%;background:radial-gradient(circle at 45% 40%,#e4c578,#b98f3b)}
+.side.a .mini::after{background:radial-gradient(circle at 45% 40%,#d9b15a,#8a6a29)}
+.quote{margin-top:30px;padding:26px 28px;border-left:3px solid var(--brass);background:var(--panel2);font-size:19px;font-style:italic;color:var(--cream);max-width:720px}
+.quote .who{display:block;margin-top:10px;font:600 11px/1.6 -apple-system,system-ui,sans-serif;font-style:normal;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+
+.facts{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:26px}
+.fact{border-top:1px solid var(--line2);padding-top:18px}
+.fact h3{font-size:17px;letter-spacing:.06em}
+.fact p{color:var(--muted);font-size:15px;margin-top:10px}
+.fact p a{color:var(--brass2)}
+
+.findgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:26px;margin-top:26px}
+.mapcell{border:1px solid var(--line);background:var(--panel);width:100%}
+.mapcell iframe{display:block;width:100%;height:420px;border:0;filter:grayscale(.35) contrast(1.05)}
+.findcard{border:1px solid var(--line);background:var(--panel);padding:28px}
+.findcard .row{padding:14px 0;border-bottom:1px solid var(--line)}
+.findcard .row:last-child{border-bottom:none}
+.findcard .k{font:600 11px/1.6 -apple-system,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--brass)}
+.findcard .v{margin-top:6px;font-size:16px}
+.findcard .v a{color:var(--cream);text-decoration:none;border-bottom:1px solid var(--line2)}
+.findcard .v a:hover{color:var(--brass2)}
+
+.faq{margin-top:8px}
+.faq dt{font-size:19px;color:var(--cream);margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+.faq dt:first-child{border-top:none;padding-top:0;margin-top:0}
+.faq dd{color:var(--muted);margin-top:10px;max-width:760px}
+
+ul.plain{list-style:none}
+ul.plain li{padding:12px 0 12px 30px;border-bottom:1px solid var(--line);position:relative;color:var(--cream)}
+ul.plain li:last-child{border-bottom:none}
+ul.plain li::before{content:"◦";position:absolute;left:6px;color:var(--brass);font-size:20px;line-height:1.4}
+ul.plain li .sub{color:var(--muted);font-size:15px;display:block}
+
+.formgrid{display:grid;grid-template-columns:1.2fr 1fr;gap:32px;margin-top:26px}
+form.contact label{display:block;font:600 11px/1.7 -apple-system,system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:18px 0 8px}
+form.contact input,form.contact textarea{width:100%;background:#0f0b07;border:1px solid var(--line);color:var(--cream);
+  font:16px/1.6 -apple-system,system-ui,sans-serif;padding:13px 14px;border-radius:2px}
+form.contact input:focus,form.contact textarea:focus{outline:none;border-color:var(--brass)}
+form.contact textarea{min-height:150px;resize:vertical}
+form.contact .note{color:var(--muted);font-size:14px;margin-top:14px}
+form.contact button{margin-top:22px}
+
+.bigdisc{width:150px;height:150px;border-radius:50%;margin:0 0 26px;
+  background:repeating-radial-gradient(circle at 50% 50%,var(--groove1) 0 3px,var(--groove2) 3px 6px);box-shadow:0 0 0 1px var(--line)}
+.done{border:1px solid var(--line2);background:var(--panel);padding:44px 38px;margin-top:40px;max-width:640px}
+
+footer{border-top:1px solid var(--line2);background:#100c08;padding:44px 0 52px;margin-top:20px}
+footer .fbrand{font-size:19px;letter-spacing:.16em;text-transform:uppercase;color:var(--cream)}
+footer .footline{color:var(--muted);font-size:14px;margin-top:14px;max-width:900px}
+footer .footline a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+footer .footline a:hover{color:var(--brass2)}
+footer .hours{color:var(--muted);font-size:14px;margin-top:8px}
+
+@media (max-width:900px){
+  .sides,.facts,.findgrid,.formgrid{grid-template-columns:1fr}
+  .disc{display:none}
+  .hero{padding:64px 0 56px!important}
+  main>section{padding:48px 0}
+  .mapcell iframe{height:340px}
+}
+@media (max-width:560px){
+  body{font-size:16px}
+  h1{letter-spacing:.02em}
+  .top .wrap{padding-top:14px;padding-bottom:14px}
+  nav{gap:2px 16px}
+  nav a{font-size:12px}
+  .btn{padding:14px 18px}
+  .quote{padding:20px}
+  .mapcell iframe{height:280px}
+}
